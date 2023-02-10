@@ -2,7 +2,11 @@
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
-    <bean id="messageRenderer" class="com.github.bzalyaliev.MessageRenderer">
-        <constructor-arg name="text" value="Привет!"/>
-      </bean>
+
+    <bean id="renderer" class="com.github.bzalyaliev.MessageRenderer">
+        <constructor-arg name="message" ref="message"/>
+    </bean>
+    <bean id="message" class="com.github.bzalyaliev.ByeMessage">
+        <constructor-arg name="text" value="Bulat"/>
+    </bean>
 </beans>

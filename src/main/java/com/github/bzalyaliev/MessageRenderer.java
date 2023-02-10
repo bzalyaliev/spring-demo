@@ -1,13 +1,14 @@
 package com.github.bzalyaliev;
 
 public class MessageRenderer {
-    private String text;
 
-    public MessageRenderer(String text) {
-        this.text = text;
+    private Message message;
+
+    public MessageRenderer(Message message) {
+        this.message = message;
     }
 
     public void printMessage() {
-        System.out.println(text);
+        System.out.println(message.getText());
     }
 }
