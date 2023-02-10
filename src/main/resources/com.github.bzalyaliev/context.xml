@@ -3,10 +3,16 @@
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-    <bean id="renderer" class="com.github.bzalyaliev.MessageRenderer">
+    <bean id="renderer" class="com.github.bzalyaliev.MessageRendererStandardImpl">
         <constructor-arg name="message" ref="message"/>
     </bean>
-    <bean id="message" class="com.github.bzalyaliev.ByeMessage">
-        <constructor-arg name="text" value="Bulat"/>
+
+    <bean id="message" class="com.github.bzalyaliev.HelloMessage">
+        <constructor-arg name="text" value="Andrey"/>
     </bean>
+
+    <bean id="independentRenderer" class="com.github.bzalyaliev.IndependentMessageRenderer">
+        <constructor-arg name="renderer" ref="renderer"/>
+    </bean>
+
 </beans>
